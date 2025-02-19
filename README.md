@@ -374,6 +374,7 @@ trackingNumber veya referenceNo parametrelerini URL üzerinden query string olar
 
 <a name="_toc100827518"></a>*Şekil 10 TrackDelivery products.array*
 
+![image](https://github.com/user-attachments/assets/84aea35e-9e73-458c-af30-8e5fc852e4c7)
 
 
 |statusHistories array|||||
@@ -382,6 +383,9 @@ trackingNumber veya referenceNo parametrelerini URL üzerinden query string olar
 |StatusId|string|106|Gönderi için gerçekleşen statü değişiminin unique Id bilgisi||
 |Status|string|TM Hat İndirme|Gönderi için gerçekleşen statü değişiminin adı||
 |Description|string|TM Hat İndirme|Gönderi için gerçekleşen statü değişiminin detayı||
+
+
+
 
 ### <a name="_toc101346618"></a>Hatalı Dönüş Parametreleri
 ##
