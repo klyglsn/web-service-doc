@@ -92,12 +92,12 @@ Test HESABI Bilgileri
 
 “musteri”: “**TEST”**
 
-“sifre”: "Şifre için entegrasyon@sendeo.com.tr adresine mail iletiniz."
+“sifre”: "Şifre için entegrasyon@kolaygelsin.com adresine mail iletiniz."
 
 
 Canlı APi Bilgilerinin tanımı aşağıdaki gibi yapılması gerekmektedir.
 
-1. Sube.sendeo.com.tr sayfasına giriş yapılır
+1. Sube.kolaygeslin.com sayfasına giriş yapılır
 1. Açılan ekran üzerinden “Kayıt Ol” butonuna tıklanır
 
 ![](Sendeo.9822246f-99c5-433f-9aec-66c86d8463a9.004.png)
@@ -265,7 +265,7 @@ Teslimat ve İade noktası için de kullanmak istediğiniz bayi bilgisini ID ola
 |**Parametre**|**Tipi**|**Örnek Değer**|**Açıklama**|
 | :- | :- | :- | :- |
 |TrackingNumber|string|9124356789047|Oluşturulan iş emri/gönderinin takip numarası|
-|TrackingUrl|string|https://sube.sendeo.com.tr/takip?ccode=111111&musref=sendeo-aygaz-12345|Oluşturulan iş emri/gönderiye ait sendeo takip URL’i. İş emirleri gönderiye dönüştükten sonra takip URL’i aktif olmaktadır.|
+|TrackingUrl|string|https://sube.kolaygelsin.com/takip?ccode=111111&musref=sendeo-aygaz-12345|Oluşturulan iş emri/gönderiye ait sendeo takip URL’i. İş emirleri gönderiye dönüştükten sonra takip URL’i aktif olmaktadır.|
 |Barcode|string|Base64 barkod örneği döner|barcodeLabelType 1 ile atılan istek için dönen Base64 barkodu içerir.|
 |BarcodeZpl|string|ZPL barkod örneği döner|barcodeLabelType 2 ile atılan istek için dönen ZPL Zebra barkodu içerir.|
 |BarcodeNumbers|string|Gönderiye ait barkod numarası bilgisidir|Gönderiye ait barkod numaralarını içerir.|
@@ -461,7 +461,7 @@ Post metodu ile çalışır.
 | :- | :- | :- | :- |
 |TrackingNumber|string|912345678|Oluşturulan iş emri/gönderinin takip numarası|
 |ShipmentId|int|122425|Gönderi idsi.|
-|TrackingUrl|string|https://sube.sendeo.com.tr/takip?ccode=111111&musref=sendeo-aygaz-12345|Oluşturulan iş emri/gönderiye ait sendeo takip URL’i. İş emirleri gönderiye dönüştükten sonra takip URL’i aktif olmaktadır.|
+|TrackingUrl|string|https://sube.kolaygelsin.com/takip?ccode=111111&musref=sendeo-aygaz-12345|Oluşturulan iş emri/gönderiye ait sendeo takip URL’i. İş emirleri gönderiye dönüştükten sonra takip URL’i aktif olmaktadır.|
 |Barcode|string|Base64 barkod örneği döner|barcodeLabelType 1 ile atılan istek için dönen Base64 barkodu içerir.|
 |BarcodeZpl|string|ZPL barkod örneği döner|barcodeLabelType 2 ile atılan istek için dönen ZPL Zebra barkodu içerir.|
 |BarcodeNumbers|string|Gönderiye ait barkod numarası bilgisidir|Gönderiye ait barkod numaralarını içerir.|
@@ -537,7 +537,7 @@ Post metodu ile çalışır.
 
 https://api.sendeo.com.tr/api/Cargo/GetCityDistricts?CityName=kastamonu&DistrictName=merkez
  
-https://api-dev.sendeo.com.tr/api/Cargo/GetCityDistricts?CityName=izmir
+https://api.sendeo.com.tr/api/Cargo/GetCityDistricts?CityName=izmir
  
 ![image](https://github.com/SendeoTeknoloji/web-service-doc/assets/17000532/0af81477-6ee9-4b26-a0d8-0e6f519ce8e1)
 
