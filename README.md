@@ -182,6 +182,11 @@ Müşterilerin Sendeo’ya istek atarak daha önce oluşturduğu Gönderi/İş E
 
 Müşterilerin Sendeo’ya istek atarak daha önce oluşturduğu Gönderi/İş Emri için adet ve ölçüm bilgilerini güncelleyebilmesini sağlar.
 
+#### GetCargoList
+Bearer token ile  Post  metodu ile  request içerisinde "ShipmentStartDate"  ve "ShipmentEndDate" alanlarına tarih detayı verilerek istek atılmalır. Dönen response da ise belirtilen tarih aralıklarına ait sipariş numları dönmektedir. 
+Örnek Request
+<img width="740" height="582" alt="image" src="https://github.com/user-attachments/assets/973d4524-1b67-46b9-8ccf-5afafd03a539" />
+
 #### GETBARCODEBYTRACKINGNUMBER
 
 Müşterilerin Sendeo’ya istek atarak daha önce oluşturduğu Gönderi/İş Emri için takip numarasını kullanarak barkod bilgilerini alabilmesini sağlar.
@@ -566,3 +571,4 @@ DeliveryType 1 ,2 ve 3 Örnekleri
 #### <a href="ENTEGRASYON.postman_collection.json" >API Test Postman Dosyası</a>
  Dosyayı kayıt etmek için aşağıdaki işlemi uygulayınız.
 ![](image (3).png)
+
