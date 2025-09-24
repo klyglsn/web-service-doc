@@ -86,7 +86,7 @@ Servislerin kullanılması için müşteri bazlı token alınması gerekmektedir
 
 <a name="_toc100827509"></a>*Şekil 1 Login Yöntemi Parametreleri*
 
-Yapılan entegrasyon testlerinin takibinin hem müşteri hem Sendeo tarafından kolay takibi amacıyla farklı müşteriler için tek test hesabı bulunmaktadır. Testler başarılı şekilde tamamlandıktan sonra canlı geçiş sürecinde api kullanıcı tanımı sube.sendeoo.com.tr üzerinden tanımlanması gerekmektedir. API servislerimiz herkese açıktır. Dışarıdan gelen istekler için herhangi bir IP iznimiz bulunmamaktadır. Ancak çok sayıda hatalı kullanıcı adı veya şifre bilgisi girildiğinde bloklanma olmaktadır. Bu durumda entegrasyon mail adresimize bilgi verilmelidir.
+Yapılan entegrasyon testlerinin takibinin hem müşteri hem Sendeo tarafından kolay takibi amacıyla farklı müşteriler için tek test hesabı bulunmaktadır. Testler başarılı şekilde tamamlandıktan sonra canlı geçiş sürecinde api kullanıcı tanımı sube.kolaygelsin.com üzerinden tanımlanması gerekmektedir. API servislerimiz herkese açıktır. Dışarıdan gelen istekler için herhangi bir IP iznimiz bulunmamaktadır. Ancak çok sayıda hatalı kullanıcı adı veya şifre bilgisi girildiğinde bloklanma olmaktadır. Bu durumda entegrasyon mail adresimize bilgi verilmelidir.
 
 Test HESABI Bilgileri
 
@@ -97,7 +97,7 @@ Test HESABI Bilgileri
 
 Canlı APi Bilgilerinin tanımı aşağıdaki gibi yapılması gerekmektedir.
 
-1. Sube.kolaygeslin.com sayfasına giriş yapılır
+1. Sube.kolaygelsin.com sayfasına giriş yapılır
 1. Açılan ekran üzerinden “Kayıt Ol” butonuna tıklanır
 
 ![](Sendeo.9822246f-99c5-433f-9aec-66c86d8463a9.004.png)
@@ -571,4 +571,5 @@ DeliveryType 1 ,2 ve 3 Örnekleri
 #### <a href="ENTEGRASYON.postman_collection.json" >API Test Postman Dosyası</a>
  Dosyayı kayıt etmek için aşağıdaki işlemi uygulayınız.
 ![](image (3).png)
+
 
