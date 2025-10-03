@@ -125,7 +125,7 @@ Gönderi toplama işlemi için tekil bir numara (referenceNo) oluşturulur. Olu�
 #### ***Generic Kargo Entegrasyonu iş akışı:***
 
 1. Müşteri gönderilerine ait verileri “SetDelivery” ile Sendeo sistemine aktarır.
-1. “SetDelivery” servisindeki cityId ve districtId bilgilerini “GetCityDistricts” servisinden sorgulayabilirsiniz. GetCityDistricts servisinden il ismine ya da il/ilçe ismine göre sorgulama yapılarak il ve ilçe kodlarına ulaşılabilir. İlgili servisin kullanılmadığı durumda teknik dökümanımızda bulunan il-ilçe excel listesi üzerinden il ve ilçe kodlarımıza ulaşabilirsiniz.
+1. “SetDelivery” servisindeki cityId ve districtId bilgilerini “GetCityDistricts” servisinden sorgulayabilirsiniz. GetCityDistricts servisinden il ismine ya da il/ilçe ismine göre sorgulama yapılarak il ve ilçe kodlarına ulaşılabilir. Doküman içerisinde detayı anlatılmaktadır.
 1. Sisteme aktarılan verilerdeki ReferenceNo bilgisi oluşturulan barkod üzerinde bulunması gerekmektedir. 
 1. Fiziken toplama işlemi yapılmadan önce veri “CancelDelivery” ile iptal edilmesi mümkündür. Toplama işlemi yapılmış olan iş emirleri için iptal işlemi gerçekleştirilememektedir. Gönderi düzenlenmesi sonrasında taşıma süreci başladığı için iptal işlemi gerçekleştirilemez.
 1. Toplama sürecinde müşterimizin oluşturduğu ReferenceNo bilgisini okutarak toplama işlemini gerçekleştirir.
@@ -164,7 +164,7 @@ Bu servislerin ana kullanım amaçları kısa özetlerle aşağıdaki gibidir:
 
 #### GetCityDistricts
 
-Gönderici ve alıcı müşteriye ait adreslerde Setdelivery servisine iletilecek il ve ilçe kodları bilgisinin sorgulandığı web servistir. İl adı ya da il/ilçe adı ile sorgulama yapılabilmektedir.
+Gönderici ve alıcı müşteriye ait adreslerde Setdelivery servisine iletilecek il ve ilçe kodları bilgisinin sorgulandığı web servistir. İl adı ya da il/ilçe adı ile sorgulama yapılabilmektedir.https://api.sendeo.com.tr/api/Cargo/GetCityDistricts parametreler CityName=&DistrictName= 
 
 #### SETDELIVERY
 
@@ -571,5 +571,6 @@ DeliveryType 1 ,2 ve 3 Örnekleri
 #### <a href="ENTEGRASYON.postman_collection.json" >API Test Postman Dosyası</a>
  Dosyayı kayıt etmek için aşağıdaki işlemi uygulayınız.
 ![](image (3).png)
+
 
 
