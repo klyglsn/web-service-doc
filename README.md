@@ -78,7 +78,7 @@ Bu doküman, Sendeo web servis entegrasyonları için hazırlanmıştır. <a nam
  
 # <a name="_toc101346604"></a>Genel Bilgiler
 
-Sendeo servisleri <https://api.sendeo.com.tr>  üzerinden çalışmaktadır. 
+Sendeo servisleri <https://apiintg.kolaygelsin.com>  üzerinden çalışmaktadır. 
 
 Servislerin kullanılması için müşteri bazlı token alınması gerekmektedir. Bu bilgi Token/LoginAES servisi üzerinden müşteri bazlı alınmaktadır. “BEARER” token kullanılmaktadır. Token expire süremiz 20 saattir. Bu süre bitiminde yeniden token alınması gerekmektedir. Erişimde TLS 1.2 kullanılmalıdır.
 
@@ -164,7 +164,7 @@ Bu servislerin ana kullanım amaçları kısa özetlerle aşağıdaki gibidir:
 
 #### GetCityDistricts
 
-Gönderici ve alıcı müşteriye ait adreslerde Setdelivery servisine iletilecek il ve ilçe kodları bilgisinin sorgulandığı web servistir. İl adı ya da il/ilçe adı ile sorgulama yapılabilmektedir.https://api.sendeo.com.tr/api/Cargo/GetCityDistricts parametreler CityName=&DistrictName= 
+Gönderici ve alıcı müşteriye ait adreslerde Setdelivery servisine iletilecek il ve ilçe kodları bilgisinin sorgulandığı web servistir. İl adı ya da il/ilçe adı ile sorgulama yapılabilmektedir. https://apiintg.kolaygelsin.com/api/Cargo/GetCityDistricts parametreler CityName=&DistrictName= 
 
 #### SETDELIVERY
 
@@ -540,9 +540,9 @@ Post metodu ile çalışır.
 
 İl ilçe ismi var ise aşağıdaki gibi sorgulanabilir.
 
-https://api.sendeo.com.tr/api/Cargo/GetCityDistricts?CityName=kastamonu&DistrictName=merkez
+https://apiintg.kolaygelsin.com/api/Cargo/GetCityDistricts?CityName=kastamonu&DistrictName=merkez
  
-https://api.sendeo.com.tr/api/Cargo/GetCityDistricts?CityName=izmir
+https://apiintg.kolaygelsin.com/api/Cargo/GetCityDistricts?CityName=izmir
  
 ![image](https://github.com/SendeoTeknoloji/web-service-doc/assets/17000532/0af81477-6ee9-4b26-a0d8-0e6f519ce8e1)
 
@@ -571,6 +571,7 @@ DeliveryType 1 ,2 ve 3 Örnekleri
 #### <a href="ENTEGRASYON.postman_collection.json" >API Test Postman Dosyası</a>
  Dosyayı kayıt etmek için aşağıdaki işlemi uygulayınız.
 ![](image (3).png)
+
 
 
 
