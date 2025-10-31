@@ -543,8 +543,57 @@ Post metodu ile çalışır.
 https://apiintg.kolaygelsin.com/api/Cargo/GetCityDistricts?CityName=kastamonu&DistrictName=merkez
  
 https://apiintg.kolaygelsin.com/api/Cargo/GetCityDistricts?CityName=izmir
- 
-![image](https://github.com/SendeoTeknoloji/web-service-doc/assets/17000532/0af81477-6ee9-4b26-a0d8-0e6f519ce8e1)
+
+Request iletirken isterseniz CityName verebilirsiniz ve tüm ilçeleri alabilirsiniz. İsterseniz CityName ve DistrictName vererek istediğiniz ilçenin kodunu alabilirsiniz
+
+ Response :
+( il & İlçe ile sorgulama) 
+
+  "requestId": "ca15ed1c-bc74-4277-822a-aca191d1e581",
+    "result": {
+        "CityName": "İstanbul",
+        "CityId": 34,
+        "Districts": [
+            {
+                "DistrictName": "Tuzla",
+                "DistrictId": 14128232
+            }
+        ]
+    },
+    "StatusCode": 200,
+    "IsSuccessful": true
+}
+
+(İl bilgisi ile sorgulama) 
+
+{
+    "requestId": "de2e1db2-a812-42ed-b19a-92cc20439193",
+    "result": {
+        "CityName": "İstanbul",
+        "CityId": 34,
+        "Districts": [
+            {
+                "DistrictName": "Arnavutköy",
+                "DistrictId": 14128027
+            },
+            {
+                "DistrictName": "Gaziosmanpaşa",
+                "DistrictId": 14128978
+            },
+            {
+                "DistrictName": "Pendik",
+                "DistrictId": 14129218
+            },
+            {
+                "DistrictName": "Sultanbeyli",
+                "DistrictId": 14128993
+                *
+                *
+                *
+                 },
+    "StatusCode": 200,
+    "IsSuccessful": true
+}   
 
 
 DeliveryType 1 ,2 ve 3 Örnekleri
@@ -571,6 +620,7 @@ DeliveryType 1 ,2 ve 3 Örnekleri
 #### <a href="ENTEGRASYON.postman_collection.json" >API Test Postman Dosyası</a>
  Dosyayı kayıt etmek için aşağıdaki işlemi uygulayınız.
 ![](image (3).png)
+
 
 
 
