@@ -448,6 +448,8 @@ Post metodu ile çalışır.
 ## <a name="_toc101346627"></a>GETBARCODE
 SETDELIVERY metodu ile daha önce oluşturulmuş gönderinin barkodunu barkod tipi ve referans numarası kullanarak almayı sağlayan servistir.
 
+<img width="674" height="355" alt="GetbarcodeIMG" src="https://github.com/user-attachments/assets/842efb23-7d14-4489-a59d-934526f07a95" />
+
 Post metodu ile çalışır.
 
 ### <a name="_toc101346628"></a>İstek Parametreleri
@@ -620,6 +622,7 @@ DeliveryType 1 ,2 ve 3 Örnekleri
 #### <a href="ENTEGRASYON.postman_collection.json" >API Test Postman Dosyası</a>
  Dosyayı kayıt etmek için aşağıdaki işlemi uygulayınız.
 ![](image (3).png)
+
 
 
 
