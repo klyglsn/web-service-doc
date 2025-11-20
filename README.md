@@ -78,7 +78,7 @@ Bu doküman, Sendeo web servis entegrasyonları için hazırlanmıştır. <a nam
  
 # <a name="_toc101346604"></a>Genel Bilgiler
 
-Sendeo servisleri <https://apiintg.kolaygelsin.com>  üzerinden çalışmaktadır. 
+Sendeo API erişim adresi <https://apiintg.kolaygelsin.com> üzerinden çalışmaktadır. (API adresi tarayıcıda açılmaz)   
 
 Servislerin kullanılması için müşteri bazlı token alınması gerekmektedir. Bu bilgi Token/LoginAES servisi üzerinden müşteri bazlı alınmaktadır. “BEARER” token kullanılmaktadır. Token expire süremiz 20 saattir. Bu süre bitiminde yeniden token alınması gerekmektedir. Erişimde TLS 1.2 kullanılmalıdır.
 
@@ -620,6 +620,7 @@ DeliveryType 1 ,2 ve 3 Örnekleri
 #### <a href="ENTEGRASYON.postman_collection.json" >API Test Postman Dosyası</a>
  Dosyayı kayıt etmek için aşağıdaki işlemi uygulayınız.
 ![](image (3).png)
+
 
 
 
