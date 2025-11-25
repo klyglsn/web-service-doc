@@ -185,8 +185,30 @@ Müşterilerin Sendeo’ya istek atarak daha önce oluşturduğu Gönderi/İş E
 #### GetCargoList
 Bearer token ile  Post  metodu ile  request içerisinde "ShipmentStartDate"  ve "ShipmentEndDate" alanlarına tarih detayı verilerek istek atılmalır. Dönen response da ise belirtilen tarih aralıklarına ait sipariş numları dönmektedir. 
 Örnek Request
-<img width="740" height="582" alt="image" src="https://github.com/user-attachments/assets/973d4524-1b67-46b9-8ccf-5afafd03a539" />
-
+https://apiintg.kolaygelsin.com/api/Cargo/GetCargoList
+{
+    "ShipmentStartDate": "2023-01-01T13:14:17.555Z" ,
+    "ShipmentEndDate": "2023-03-07T13:14:17. "2023-03-07T13:14:17.555Z" ,
+    "DocumentType": null,
+    "DeliveryStartDate": null,
+    "DeliveryEndDate": null,
+    "CargoStatus": 1,
+    "SenderCustomerTitle": "",
+    "ReceiverCustomerTitle": "",
+    "SenderCustomerId": ""
+    "ReceiverCustomerId": "',
+    "SendercityId"：""
+    "ReceiverCityId": "'
+    "SenderBranchId": ""
+    "ReceiverBranchId": "',
+    "ServiceTypeld": "', //standart gönderiyse1
+    "StatusIds": (1,
+    "TrackingNumbers": [],
+    "AtfNumbers": [],
+    "CustomerReferenceNumbers": [1,
+    "PageNumber": ""
+    "PageCount":
+}
 #### GETBARCODEBYTRACKINGNUMBER
 
 Müşterilerin Sendeo’ya istek atarak daha önce oluşturduğu Gönderi/İş Emri için takip numarasını kullanarak barkod bilgilerini alabilmesini sağlar.
@@ -448,7 +470,11 @@ Post metodu ile çalışır.
 ## <a name="_toc101346627"></a>GETBARCODE
 SETDELIVERY metodu ile daha önce oluşturulmuş gönderinin barkodunu barkod tipi ve referans numarası kullanarak almayı sağlayan servistir.
 
-<img width="674" height="355" alt="GetbarcodeIMG" src="https://github.com/user-attachments/assets/842efb23-7d14-4489-a59d-934526f07a95" />
+https://apiintg.kolaygelsin.com.tr/api/Cargo/GETBARCODE 
+{
+  "barcodeLabelType": 2,
+  "referenceNo": "8880027245251060"
+} 
 
 Post metodu ile çalışır.
 
@@ -622,6 +648,7 @@ DeliveryType 1 ,2 ve 3 Örnekleri
 #### <a href="ENTEGRASYON.postman_collection.json" >API Test Postman Dosyası</a>
  Dosyayı kayıt etmek için aşağıdaki işlemi uygulayınız.
 ![](image (3).png)
+
 
 
 
