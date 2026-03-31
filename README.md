@@ -74,11 +74,11 @@
 # <a name="_toc101346603"></a>Giriş
 ![](Sendeo.9822246f-99c5-433f-9aec-66c86d8463a9.002.png)
 
-Bu doküman, Sendeo web servis entegrasyonları için hazırlanmıştır. <a name="ole_link18"></a><a name="ole_link19"></a>Entegrasyon için kullanılacak web servisler ve ilgili servislere erişimi tariflenmektedir.
+Bu doküman, Kolaygelsin web servis entegrasyonları için hazırlanmıştır. <a name="ole_link18"></a><a name="ole_link19"></a>Entegrasyon için kullanılacak web servisler ve ilgili servislere erişimi tariflenmektedir.
  
 # <a name="_toc101346604"></a>Genel Bilgiler
 
-Sendeo API erişim adresi <https://apiintg.kolaygelsin.com> üzerinden çalışmaktadır. (API adresi tarayıcıda açılmaz)   
+Kolaygelsin API erişim adresi <https://apiintg.kolaygelsin.com> üzerinden çalışmaktadır. (API adresi tarayıcıda açılmaz)   
 
 Servislerin kullanılması için müşteri bazlı token alınması gerekmektedir. Bu bilgi Token/LoginAES servisi üzerinden müşteri bazlı alınmaktadır. “BEARER” token kullanılmaktadır. Token expire süremiz 20 saattir. Bu süre bitiminde yeniden token alınması gerekmektedir. Erişimde TLS 1.2 kullanılmalıdır.
 
@@ -86,7 +86,7 @@ Servislerin kullanılması için müşteri bazlı token alınması gerekmektedir
 
 <a name="_toc100827509"></a>*Şekil 1 Login Yöntemi Parametreleri*
 
-Yapılan entegrasyon testlerinin takibinin hem müşteri hem Sendeo tarafından kolay takibi amacıyla farklı müşteriler için tek test hesabı bulunmaktadır. Testler başarılı şekilde tamamlandıktan sonra canlı geçiş sürecinde api kullanıcı tanımı sube.kolaygelsin.com üzerinden tanımlanması gerekmektedir. API servislerimiz herkese açıktır. Dışarıdan gelen istekler için herhangi bir IP iznimiz bulunmamaktadır. Ancak çok sayıda hatalı kullanıcı adı veya şifre bilgisi girildiğinde bloklanma olmaktadır. Bu durumda entegrasyon mail adresimize bilgi verilmelidir.
+Yapılan entegrasyon testlerinin takibinin hem müşteri hem Kolaygelsin tarafından kolay takibi amacıyla farklı müşteriler için tek test hesabı bulunmaktadır. Testler başarılı şekilde tamamlandıktan sonra canlı geçiş sürecinde api kullanıcı tanımı sube.kolaygelsin.com üzerinden tanımlanması gerekmektedir. API servislerimiz herkese açıktır. Dışarıdan gelen istekler için herhangi bir IP iznimiz bulunmamaktadır. Ancak çok sayıda hatalı kullanıcı adı veya şifre bilgisi girildiğinde bloklanma olmaktadır. Bu durumda entegrasyon mail adresimize bilgi verilmelidir.
 
 Test HESABI Bilgileri
 
@@ -180,7 +180,7 @@ Müşterilerin Sendeo’ya istek atarak daha önce oluşturduğu Gönderi/İş E
 
 #### CARGOMEASUREMENTUPDATE
 
-Müşterilerin Sendeo’ya istek atarak daha önce oluşturduğu Gönderi/İş Emri için adet ve ölçüm bilgilerini güncelleyebilmesini sağlar.
+Müşterilerin Kolaygelsin’e istek atarak daha önce oluşturduğu Gönderi/İş Emri için adet ve ölçüm bilgilerini güncelleyebilmesini sağlar.
 
 #### GetCargoList
 Bearer token ile  Post  metodu ile  request içerisinde "ShipmentStartDate"  ve "ShipmentEndDate" alanlarına tarih detayı verilerek istek atılmalır. Dönen response da ise belirtilen tarih aralıklarına ait sipariş numları dönmektedir. 
@@ -211,18 +211,18 @@ https://apiintg.kolaygelsin.com/api/Cargo/GetCargoList
 }
 #### GETBARCODEBYTRACKINGNUMBER
 
-Müşterilerin Sendeo’ya istek atarak daha önce oluşturduğu Gönderi/İş Emri için takip numarasını kullanarak barkod bilgilerini alabilmesini sağlar.
+Müşterilerin Kolaygelsin’e istek atarak daha önce oluşturduğu Gönderi/İş Emri için takip numarasını kullanarak barkod bilgilerini alabilmesini sağlar.
 ## <a name="_toc101346607"></a> GetCityDistricts
 Gönderici ya da Alıcı müşteriye ait adreslerde il ve ilçe kodu bilgisinin alındığı web servistir. Servisten il adına ya da il ve ilçe adına göre sorgulama yapılabilir.  Servisten dönen CityId ve DistrictId bilgileri setdelivery servisinde ilgili alanlara gönderilerek iş emri oluşturulabilir. İl ve ilçe kodları bilgisi web servis haricinde teknik dokümanımızdaki il ve ilçe kodları excel listesinden alınabilir.
 ## SETDELIVERY
-Müşterilerin belirli bilgileri kullanarak Sendeo tarafında gönderi/iş emri oluşturmasını sağlayan servistir. POST metodu ile çalışır. 6 farklı şekilde gönderi/iş emri oluşturulabilir. Bunlar:
+Müşterilerin belirli bilgileri kullanarak Kolaygelsin tarafında gönderi/iş emri oluşturmasını sağlayan servistir. POST metodu ile çalışır. 6 farklı şekilde gönderi/iş emri oluşturulabilir. Bunlar:
 
 - **DeliveryType 1:** Lokasyonunuz >> Müşteriniz: Lokasyon’dan Müşteriye giden gönderilerde kullanılmaktadır. Birden fazla lokasyon var ve her biri için ayrı fatura düzenlenecek ise; farklı kullanıcılar ile yönetilmelidir. Eğer fatura Ana Müşteriye düzenlenecek ise deliveryType=3 kullanılmalıdır.
 - **DeliveryType 2:** Müşteriniz >> Lokasyonunuz : Müşteriden Lokasyona normal gönderi ya da iade gönderisi yapmak için kullanılmaktadır
 - **DeliveryType 3:** Tedarikçiniz v.b. >> Müşteriniz  
 - **DeliveryType 4:** Yeniden gönderi talimatı 
-- **DeliveryType 5:** Teslimat Noktası . Sendeo Teslimat noktasına teslim edilecek gönderiler için kullanılmaktadır
-- **DeliveryType 6:** İade Noktası. Sendeo İade noktasından alınacak gönderiler için kullanılmaktadır
+- **DeliveryType 5:** Teslimat Noktası . Kolaygelsin Teslimat noktasına teslim edilecek gönderiler için kullanılmaktadır
+- **DeliveryType 6:** İade Noktası. Kolaygelsin İade noktasından alınacak gönderiler için kullanılmaktadır
 
 Müşterilerimiz çalıştığı tüm birimler arasında gönderi oluşturabilirsiniz. Ayrıca teslimat ve iade noktası olarak da servis alabilirsiniz.
 
@@ -236,32 +236,32 @@ Teslimat ve İade noktası için de kullanmak istediğiniz bayi bilgisini ID ola
 |**Parametre**|**Tipi**|**Zorunluluk**|**Örnek Değer**|**Açıklama**|
 | :- | :- | :- | :- | :- |
 |DeliveryType|integer|Zorunlu|1|<p>Yukarıda belirtilen Type 1, 2, 3, 4, 5, 6 seçeneklerini içerir. Gönderinin nereden alınıp nereye gönderileceğini veya hangi noktadan alınıp verileceğini belirtir.</p><p></p>|
-|ReferenceNo|string|Zorunlu|“sendeo-aygaz-12345”|Müşterilerin iç işleyişinde kullandığı referans numarasını içerir. Bu değer ile gönderiler takip edebilir, iade talepleri oluşturabilir. 50 karakter ve string değerde iletilmektedir.|
-|Description|string|Zorunlu Değil|“sendeo hakkında kitap içeren gönderi”|Gönderiye ait özel bir bilgi veya açıklama girmek isterseniz bu alanı kullanabilirsiniz.|
-|Sender|string|Değişken|“Ali Sendeo”|<p>Gönderen müşteri ünvanını içerir. DeliveryType = 2,3 için **zorunludur**.</p><p>DeliveryType = 1 için **doldurulmaz**.200 karakter iletilmektedir.</p>|
-|SenderId|string|Zorunlu Değil||Sendeo tarafında olan müşteri kodu bilgisidir. Sendeo tarafında kayıtlı müşteriler kullanılmıyor ise ilgili alan gönderilmemesi gerekmektedir.|
-|SenderAuthority|string|Zorunlu Değil|“Can Sendeo”|Gönderen müşteri yetkilinizi belirtir.|
+|ReferenceNo|string|Zorunlu|“Kolaygelsin-12345”|Müşterilerin iç işleyişinde kullandığı referans numarasını içerir. Bu değer ile gönderiler takip edebilir, iade talepleri oluşturabilir. 50 karakter ve string değerde iletilmektedir.|
+|Description|string|Zorunlu Değil|“Kolaygelsin hakkında kitap içeren gönderi”|Gönderiye ait özel bir bilgi veya açıklama girmek isterseniz bu alanı kullanabilirsiniz.|
+|Sender|string|Değişken|“Ali Kolaygelsin”|<p>Gönderen müşteri ünvanını içerir. DeliveryType = 2,3 için **zorunludur**.</p><p>DeliveryType = 1 için **doldurulmaz**.200 karakter iletilmektedir.</p>|
+|SenderId|string|Zorunlu Değil||Kolaygelsin tarafında olan müşteri kodu bilgisidir. Kolaygelsin tarafında kayıtlı müşteriler kullanılmıyor ise ilgili alan gönderilmemesi gerekmektedir.|
+|SenderAuthority|string|Zorunlu Değil|“Can Kolaygelsin”|Gönderen müşteri yetkilinizi belirtir.|
 |SenderBranchCode|integer|Değişken|123|İade noktası operasyonunda gönderilmesi **zorunlu** alandır. DeliveryType = 6 seçilmemesi durumunda boş **bırakılmalıdır**.|
 |SenderAddress|string|Zorunlu |TEST ADRES TEST ADRES|DeliveryType bilgisine göre değişkenlik göstermektedir. Açık adresi girilmelidir.225 karakter iletilmektedir.|
 |SenderCityId|integer|Zorunlu|34|City tablosundan gelecek şehir Id’si ile gönderen müşteri ili olarak girilmelidir.|
 |SenderDistrictId|integer|Zorunlu|34139|District tablosundan gelecek Id gönderen müşterinin bulunduğu ilçe girilmelidir.|
 |senderPhone|string|Değişken|2121234567|<p>Gönderen müşterinin telefon numarasını belirtir. İdealde xyz1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.30 karakter sınırı vardır.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
 |SenderGSM|string|Değişken|5361234567|<p>Gönderen müşterinin GSM numarasını belirtir. İdealde 5xx1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.30 karakter sınırı vardır.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
-|SenderEmail|string|Zorunlu Değil|<sendeo@sendeo.com>|Gönderen müşterinin mail adresini içerir.250 karakter sınırı vardır.|
-|Receiver|string|Değişken|“Ali Sendeo”|<p>Alıcı müşteri ünvanını içerir. deliveryType = 1,3 için **zorunludur**.200 karakter iletilmektedir.</p><p>deliveryType = 2 için **doldurulmaz**.</p>|
-|ReceiverId|string|Değişken||Alıcı müşterinin kodudur. Sendeo tarafında değeri biliniyor ise gönderilmelidir. |
-|ReceiverAuthority|string|Zorunlu Değil|“Can Sendeo”|Alıcı müşteri yetkilisini belirtir.|
+|SenderEmail|string|Zorunlu Değil|<Kolaygelsin@Kolaygelsin.com>|Gönderen müşterinin mail adresini içerir.250 karakter sınırı vardır.|
+|Receiver|string|Değişken|“Ali Kolaygelsin”|<p>Alıcı müşteri ünvanını içerir. deliveryType = 1,3 için **zorunludur**.200 karakter iletilmektedir.</p><p>deliveryType = 2 için **doldurulmaz**.</p>|
+|ReceiverId|string|Değişken||Alıcı müşterinin kodudur. Kolaygelsin tarafında değeri biliniyor ise gönderilmelidir. |
+|ReceiverAuthority|string|Zorunlu Değil|“Can Kolaygelsin”|Alıcı müşteri yetkilisini belirtir.|
 |ReceiverBranchCode|integer|Değişken|123|Teslimat noktası operasyonunda gönderilmesi **zorunlu** alandır. deliveryType = 5 seçilmemesi durumunda boş **bırakılmalıdır**.|
 |ReceiverAddress|string|Değişken|“Kemerburgaz Caddesi Vadi İstanbul Park 7B Blok Kat:12 Sarıyer İstanbul”|<p>Alıcı müşterinin adres bilgileri girilmelidir.</p><p>Alıcı müşteri ünvanını içerir. deliveryType = 1,3 için **zorunludur**.225 karakter iletilmektedir.</p><p>deliveryType = 2 için **doldurulmaz**.</p>|
 |ReceiverCityId|integer|Zorunlu|34|City tablosundan gelecek şehir Id’si ile alıcı müşteri ili olarak girilmelidir.|
 |ReceiverDistrictId|integer|Zorunlu|34139|District tablosundan gelecek Id alıcı müşterinin bulunduğu ilçe girilmelidir.|
 |receiverPhone|string|Değişken|2121234567|<p>Alıcı müşterinin telefon numarasını belirtir. İdealde xyz1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.30 karakter sınırı vardır.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
 |ReceiverGSM|string|Değişken|5361234567|<p>Alıcı müşterinin GSM numarasını belirtir. İdealde 5xx1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.30 karakter sınırı vardır.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
-|ReceiverEmail|string|Zorunlu Değil|<sendeo@sendeo.com>|Alıcı müşterinin mail adresini içerir.250 karakter sınırı vardır.|
+|ReceiverEmail|string|Zorunlu Değil|<Kolaygelsin@Kolaygelsin.com>|Alıcı müşterinin mail adresini içerir.250 karakter sınırı vardır.|
 |PaymentType|integer|Zorunlu|1|Standart olarak 1 **girilmelidir**.|
 |CollectionType|integer|Zorunlu|0|<p>Tahsilatlı kargolarda ödeme şeklini gösterir:</p><p>0 – Tahsilatsız kargo</p><p>1 – Nakit</p><p>2 – Kredi Kartı</p>|
 |CollectionPrice|double|Zorunlu|0|Tahsilatlı kargolarda müşteriden ne kadar tahsilat yapılacağını gösterir. Tahsil edilecek tutar gönderilmelidir. collectionType değerinin 0 olması halinde collectionPrice = 0 olmalıdır. Bu alan 5000 lira ile sınırlıdır.|
-|DispatchNoteNumber|string|Zorunlu Değil|“1a2b3-SendeO”|Müşteriye oluşturulan resmi irsaliye seri ve numarasını içerir. Giriş yapılması halinde buna göre gönderiler sorgulanabilir.|
+|DispatchNoteNumber|string|Zorunlu Değil|“1a2b3-Kolaygelsin”|Müşteriye oluşturulan resmi irsaliye seri ve numarasını içerir. Giriş yapılması halinde buna göre gönderiler sorgulanabilir.|
 |ServiceType|integer|Zorunlu|1|<p>Servis tipini belirtir. Özel operasyonlar dışında default 1 gönderilmelidir.</p><p></p>|
 |BarcodeLabelType|integer|Zorunlu|<p>1 </p><p></p>|<p>Servis dönüşünde alınacak barkod etiket yazdırma tipini belirtir.</p><p>0 – ZPL</p><p>1 – Base64</p><p>2 – ZPL</p><p>3 – ZPLs</p><p>8–  ZPL - BarcodeLabelType alanında 8 değeri gönderilir ise   “additionalValue” alanında verinin **ZPL** formatında eklenmesi gerekmektedir.</p><p>9 – Base64 - BarcodeLabelType alanında 9 değeri gönderilir ise   “additionalValue” alanında verinin **HTML** formatında eklenmesi gerekmektedir.</p><p>10–Base64- BarcodeLabelType alanında 10 değeri gönderilir ise   “additionalValue” alanında verinin **TEXT** formatında eklenmesi gerekmektedir.</p><p></p><p>BarcodeLabelType = 8 , 9 veya 10 için additionalValue alanı gönderildiğinde</p><p>additionalValue </p><p>barkodun alt kısmında bulunan 2\*10’luk alanda gösterilecektir.</p><p></p><p>Array olarak alınan gönderi bilgilerinin detayıdır. Toplam adet şeklinde gönderilebileceği gibi aynı zamanda gönderileri detaylandırıp farklı şekillerde girilebilir.</p><p></p>|
 |AdditionalValue|string|Zorunlu Değil|BarcodeLabelType alanında gönderilen bilgiye göre değişmektedir.Bu kısma girilen değer barkodun alt kısmında bulunan 2\*10’luk alanda gösterilmektedir.|BarcodeLabelType bilgisine göre “ZPL”,”HTML” veya “TEXT” formatında bilgi iletilebilir.|
@@ -278,7 +278,7 @@ Teslimat ve İade noktası için de kullanmak istediğiniz bayi bilgisini ID ola
 |Count|İnteger|Zorunlu|2|Gönderi adetini belirtir. Her bir detay için adet girilmelidir. Count toplamı kadar barkod numarası oluşur.|
 |ProductCode|String|Zorunlu Değil||Boş string olarak **gönderilmelidir**.|
 |Description|string|Zorunlu Değil||<p>Ürüne ilişkin açıklama bilgisidir</p><p>Boş string olarak **gönderilmelidir**.</p>|
-|Deci|integer|Zorunlu Değil|20|<p>Gönderiye ait paketlerin deci bilgilerini içerir. count ile beraber kullanılmaktadır. Gönderilmediği durumda ölçüm Sendeo Operasyon’da yapılmaktadır.</p><p>*Tek gönderi biri 3 deci, diğeri 4 deci olan 2 kutunuz varsa:*</p><p>- *count : 1, deci : 4*</p><p>- *count : 1, deci : 3*</p><p>*gönderilir.*</p><p>*Tek gönderi iki adet 5 deci kutudan oluşuyorsa:*</p><p>- *count : 2, deci : 5*</p><p>*gönderilir.*</p><p>Deci ya da kg ölçülememesi durumunda 0(sıfır) olarak gönderilmelidir*.*</p>|
+|Deci|integer|Zorunlu Değil|20|<p>Gönderiye ait paketlerin deci bilgilerini içerir. count ile beraber kullanılmaktadır. Gönderilmediği durumda ölçüm Kolaygelsin Operasyon’da yapılmaktadır.</p><p>*Tek gönderi biri 3 deci, diğeri 4 deci olan 2 kutunuz varsa:*</p><p>- *count : 1, deci : 4*</p><p>- *count : 1, deci : 3*</p><p>*gönderilir.*</p><p>*Tek gönderi iki adet 5 deci kutudan oluşuyorsa:*</p><p>- *count : 2, deci : 5*</p><p>*gönderilir.*</p><p>Deci ya da kg ölçülememesi durumunda 0(sıfır) olarak gönderilmelidir*.*</p>|
 |Weigth|integer|Zorunlu Değil||Gönderi paketlerinin ağırlığını belirtir.|
 |DeciWeight|integer|Zorunlu Değil||Gönderi paketlerinin deci/ağırlık değerini belirtir.|
 |Price|double|<p>Zorunlu</p><p>Değil</p>||0\.0 -> Double değer olarak gönderilebilir. Nihai tutarı deci girildiğinde sistem hesaplamaktadır.|
@@ -292,7 +292,7 @@ Teslimat ve İade noktası için de kullanmak istediğiniz bayi bilgisini ID ola
 |**Parametre**|**Tipi**|**Örnek Değer**|**Açıklama**|
 | :- | :- | :- | :- |
 |TrackingNumber|string|9124356789047|Oluşturulan iş emri/gönderinin takip numarası|
-|TrackingUrl|string|https://sube.kolaygelsin.com/takip?ccode=111111&musref=sendeo-aygaz-12345|Oluşturulan iş emri/gönderiye ait sendeo takip URL’i. İş emirleri gönderiye dönüştükten sonra takip URL’i aktif olmaktadır.|
+|TrackingUrl|string|https://sube.kolaygelsin.com/takip?ccode=111111&musref=Kolaygelsin-aygaz-12345|Oluşturulan iş emri/gönderiye ait Kolaygelsin takip URL’i. İş emirleri gönderiye dönüştükten sonra takip URL’i aktif olmaktadır.|
 |Barcode|string|Base64 barkod örneği döner|barcodeLabelType 1 ile atılan istek için dönen Base64 barkodu içerir.|
 |BarcodeZpl|string|ZPL barkod örneği döner|barcodeLabelType 2 ile atılan istek için dönen ZPL Zebra barkodu içerir.|
 |BarcodeNumbers|string|Gönderiye ait barkod numarası bilgisidir|Gönderiye ait barkod numaralarını içerir.|
@@ -335,7 +335,7 @@ Teslimat ve İade noktası için de kullanmak istediğiniz bayi bilgisini ID ola
 
 <a name="_toc100827515"></a>*Şekil 7 SetDelivery Exception Message*
 ## <a name="_toc101346611"></a>CANCELDELIVERY
-Takip Numarası (trackingNumber) veya müşteriler tarafından girilen Referans Numarası (referenceNo) alanları ile gönderi iptal edilebilmektedir. Sendeo tarafından teslim alınmayan ürünler için iptal işlemi yapılabilmektedir. Gönderi teslim alınmış ise iptal işlemi **gerçekleşmez**. (101 statüsünde olduğu durumda cancel işlemi yapılabilir)
+Takip Numarası (trackingNumber) veya müşteriler tarafından girilen Referans Numarası (referenceNo) alanları ile gönderi iptal edilebilmektedir. Kolaygelsin tarafından teslim alınmayan ürünler için iptal işlemi yapılabilmektedir. Gönderi teslim alınmış ise iptal işlemi **gerçekleşmez**. (101 statüsünde olduğu durumda cancel işlemi yapılabilir)
 
 Post metodu ile çalışır.
 ### <a name="_toc101346612"></a>İstek Parametreleri
@@ -367,21 +367,21 @@ trackingNumber veya referenceNo parametrelerini URL üzerinden query string olar
 |**Parametre**|**Tipi**|**Örnek Değer**|**Açıklama**|
 | :- | :- | :- | :- |
 |TrackingNo|integer|912345678|Oluşturulan iş emri/gönderinin takip numarası|
-|ReferenceNo|string|sendeo-aygaz-12345|Oluşturulan iş emri/gönderiye ait müşteri tarafında belirlenen referans numarası|
+|ReferenceNo|string|Kolaygelsin-12345|Oluşturulan iş emri/gönderiye ait müşteri tarafında belirlenen referans numarası|
 |SendDate|string|02/02/2022 16:55:03|Oluşturulan iş emri/gönderinin gönderilme tarihi|
-|Receiver|string|Ali Sendeo|Alıcı bilgisi|
+|Receiver|string|Ali Kolaygelsin|Alıcı bilgisi|
 |CargoAmount|double|10\.03|Gönderiye ait fiyatlandırma bilgisi (KDV dahil)|
-|Sender|string|Ali Sendeo|Gönderici bilgisi|
+|Sender|string|Ali Kolaygelsin|Gönderici bilgisi|
 |State|integer|105|Gönderinin durumunu belirten statü için unique Id|
 |StateText|string|Hat Aracına Yüklendi|Gönderinin durumunu belirten statü için bilgilendirme|
 |UpdateDate|string|04/02/2022 10:00:27|Gönderide gerçekleşen son statü değişimi için güncellenme tarihi|
 |DeliveryDescription|string|TM Hat Yükleme|Gönderi için gerçekleşen süreçle ilgili bilgilendirme|
-|DealerId|integer|851|Gönderi için Sendeo alıcı bayisinin unique Id bilgisi|
+|DealerId|integer|851|Gönderi için Kolaygelsin alıcı bayisinin unique Id bilgisi|
 |DeciWeight|integer|20|Gönderinin desi/kg|
 |Quantity|integer|1|Gönderideki paket adedi|
 |TotalPrice|double|8\.50|Gönderi için belirlenmiş gönderi ücreti|
-|departureBranchName|string|İLKADIM DM|Gönderi için gönderen Sendeo bayi adı|
-|ArrivalBranchName|string|DÖRTYOL DN|Gönderi için varış Sendeo bayi adı|
+|departureBranchName|string|İLKADIM DM|Gönderi için gönderen Kolaygelsin bayi adı|
+|ArrivalBranchName|string|DÖRTYOL DN|Gönderi için varış Kolaygelsin bayi adı|
 |deliveryPlannedDate|string|2022-02-04T16:55:17.3590867+03:00|Planlanan teslim tarihi|
 |DeliveryToPoint|boolean|False|Adrese Teslim Dışı Gönderi - AT DIŞI|
 |DeliveryToPoint|boolean|True|Adrese Teslim- AT İÇİ|
@@ -393,7 +393,7 @@ trackingNumber veya referenceNo parametrelerini URL üzerinden query string olar
 |products array|||||
 | :-: | :- | :- | :- | :- |
 |Count|integer|2|Gönderideki paket adedi||
-|ProductCode|string|kitapSendeo|Stoklu gönderiler için ürün kodu||
+|ProductCode|string|kitapKolaygelsin|Stoklu gönderiler için ürün kodu||
 |Description|string|3 adet kitap|Stoklu gönderiler için ürün tanımı||
 |Price|double|8\.50|Gönderi paket fiyatı||
 |StockCount|||||
@@ -494,7 +494,7 @@ Post metodu ile çalışır.
 | :- | :- | :- | :- |
 |TrackingNumber|string|912345678|Oluşturulan iş emri/gönderinin takip numarası|
 |ShipmentId|int|122425|Gönderi idsi.|
-|TrackingUrl|string|https://sube.kolaygelsin.com/takip?ccode=111111&musref=sendeo-aygaz-12345|Oluşturulan iş emri/gönderiye ait sendeo takip URL’i. İş emirleri gönderiye dönüştükten sonra takip URL’i aktif olmaktadır.|
+|TrackingUrl|string|https://sube.kolaygelsin.com/takip?ccode=111111&musref=Kolaygelsin-12345|Oluşturulan iş emri/gönderiye ait Kolaygelsin takip URL’i. İş emirleri gönderiye dönüştükten sonra takip URL’i aktif olmaktadır.|
 |Barcode|string|Base64 barkod örneği döner|barcodeLabelType 1 ile atılan istek için dönen Base64 barkodu içerir.|
 |BarcodeZpl|string|ZPL barkod örneği döner|barcodeLabelType 2 ile atılan istek için dönen ZPL Zebra barkodu içerir.|
 |BarcodeNumbers|string|Gönderiye ait barkod numarası bilgisidir|Gönderiye ait barkod numaralarını içerir.|
@@ -506,15 +506,15 @@ Post metodu ile çalışır.
 | :- | :-: | :-: |
 |Bad Request |**400**|Gönderilen request bilgisi kontrol edilmelidir|
 |Unauthorized |**401**|<p>Token bilgisi kontrol edilmelidir.</p><p></p>|
-|Internal Server Error|**500**|Server Hatası – Sendeo ile iletişime geçilmelidir.|
-|Server Error|**5XX**|Server Hatası – Sendeo ile iletişime geçilmelidir.|
+|Internal Server Error|**500**|Server Hatası – Kolaygelsin ile iletişime geçilmelidir.|
+|Server Error|**5XX**|Server Hatası – Kolaygelsin ile iletişime geçilmelidir.|
 
 
 
 
 # <a name="_toc101346631"></a>Servislerde Kullanılacak Bilgiler
 
-### <a name="_toc101346632"></a>Sendeo Statü Listesi
+### <a name="_toc101346632"></a>Kolaygelsin Statü Listesi
 
 |**statusId**|**statusName**|**statusDescription**|
 | :-: | :- | :- |
@@ -563,7 +563,7 @@ Post metodu ile çalışır.
 |151|İade Olarak Teslim|İade Olarak Teslim|
 
 
-### <a name="_toc101346633"></a>Sendeo İl ve İlçe Listesi
+### <a name="_toc101346633"></a>Kolaygelsin İl ve İlçe Listesi
 
 
 İl ilçe ismi var ise aşağıdaki gibi sorgulanabilir.
