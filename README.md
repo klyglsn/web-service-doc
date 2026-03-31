@@ -236,7 +236,7 @@ Teslimat ve İade noktası için de kullanmak istediğiniz bayi bilgisini ID ola
 |**Parametre**|**Tipi**|**Zorunluluk**|**Örnek Değer**|**Açıklama**|
 | :- | :- | :- | :- | :- |
 |DeliveryType|integer|Zorunlu|1|<p>Yukarıda belirtilen Type 1, 2, 3, 4, 5, 6 seçeneklerini içerir. Gönderinin nereden alınıp nereye gönderileceğini veya hangi noktadan alınıp verileceğini belirtir.</p><p></p>|
-|ReferenceNo|string|Zorunlu|“sendeo-aygaz-12345”|Müşterilerin iç işleyişinde kullandığı referans numarasını içerir. Bu değer ile gönderiler takip edebilir, iade talepleri oluşturabilir.|
+|ReferenceNo|string|Zorunlu|“sendeo-aygaz-12345”|Müşterilerin iç işleyişinde kullandığı referans numarasını içerir. Bu değer ile gönderiler takip edebilir, iade talepleri oluşturabilir. 50 karakter ve string değerde iletilmektedir.|
 |Description|string|Zorunlu Değil|“sendeo hakkında kitap içeren gönderi”|Gönderiye ait özel bir bilgi veya açıklama girmek isterseniz bu alanı kullanabilirsiniz.|
 |Sender|string|Değişken|“Ali Sendeo”|<p>Gönderen müşteri ünvanını içerir. DeliveryType = 2,3 için **zorunludur**.</p><p>DeliveryType = 1 için **doldurulmaz**.</p>|
 |SenderId|string|Zorunlu Değil||Sendeo tarafında olan müşteri kodu bilgisidir. Sendeo tarafında kayıtlı müşteriler kullanılmıyor ise ilgili alan gönderilmemesi gerekmektedir.|
