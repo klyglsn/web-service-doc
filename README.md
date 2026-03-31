@@ -11,7 +11,7 @@
 |[Giriş	5](#_toc101346603) | 5|
 |[Genel Bilgiler](#_toc101346604) | 5|
 |[Generic Kargo Entegrasyon](#_toc101346605) | 	6|
-|[Cargo Servisleri	](#_toc101346606) | 8|
+|[Cargo Servisleri	](#_toc101346606) | 8|Sender
 |[SETDELIVERY](#_toc101346607) | 9|
 |[İstek Parametreleri	](#_toc101346608) | 9|
 |[Cevap Parametreleri (200 = Başarılı)	](#_toc101346609) | 14|
@@ -238,26 +238,26 @@ Teslimat ve İade noktası için de kullanmak istediğiniz bayi bilgisini ID ola
 |DeliveryType|integer|Zorunlu|1|<p>Yukarıda belirtilen Type 1, 2, 3, 4, 5, 6 seçeneklerini içerir. Gönderinin nereden alınıp nereye gönderileceğini veya hangi noktadan alınıp verileceğini belirtir.</p><p></p>|
 |ReferenceNo|string|Zorunlu|“sendeo-aygaz-12345”|Müşterilerin iç işleyişinde kullandığı referans numarasını içerir. Bu değer ile gönderiler takip edebilir, iade talepleri oluşturabilir. 50 karakter ve string değerde iletilmektedir.|
 |Description|string|Zorunlu Değil|“sendeo hakkında kitap içeren gönderi”|Gönderiye ait özel bir bilgi veya açıklama girmek isterseniz bu alanı kullanabilirsiniz.|
-|Sender|string|Değişken|“Ali Sendeo”|<p>Gönderen müşteri ünvanını içerir. DeliveryType = 2,3 için **zorunludur**.</p><p>DeliveryType = 1 için **doldurulmaz**.</p>|
+|Sender|string|Değişken|“Ali Sendeo”|<p>Gönderen müşteri ünvanını içerir. DeliveryType = 2,3 için **zorunludur**.</p><p>DeliveryType = 1 için **doldurulmaz**.200 karakter iletilmektedir.</p>|
 |SenderId|string|Zorunlu Değil||Sendeo tarafında olan müşteri kodu bilgisidir. Sendeo tarafında kayıtlı müşteriler kullanılmıyor ise ilgili alan gönderilmemesi gerekmektedir.|
 |SenderAuthority|string|Zorunlu Değil|“Can Sendeo”|Gönderen müşteri yetkilinizi belirtir.|
 |SenderBranchCode|integer|Değişken|123|İade noktası operasyonunda gönderilmesi **zorunlu** alandır. DeliveryType = 6 seçilmemesi durumunda boş **bırakılmalıdır**.|
-|SenderAddress|string|Zorunlu |TEST ADRES TEST ADRES|DeliveryType bilgisine göre değişkenlik göstermektedir. Açık adresi girilmelidir. |
+|SenderAddress|string|Zorunlu |TEST ADRES TEST ADRES|DeliveryType bilgisine göre değişkenlik göstermektedir. Açık adresi girilmelidir.225 karakter iletilmektedir.|
 |SenderCityId|integer|Zorunlu|34|City tablosundan gelecek şehir Id’si ile gönderen müşteri ili olarak girilmelidir.|
 |SenderDistrictId|integer|Zorunlu|34139|District tablosundan gelecek Id gönderen müşterinin bulunduğu ilçe girilmelidir.|
-|senderPhone|string|Değişken|2121234567|<p>Gönderen müşterinin telefon numarasını belirtir. İdealde xyz1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
-|SenderGSM|string|Değişken|5361234567|<p>Gönderen müşterinin GSM numarasını belirtir. İdealde 5xx1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
-|SenderEmail|string|Zorunlu Değil|<sendeo@sendeo.com>|Gönderen müşterinin mail adresini içerir.|
-|Receiver|string|Değişken|“Ali Sendeo”|<p>Alıcı müşteri ünvanını içerir. deliveryType = 1,3 için **zorunludur**.</p><p>deliveryType = 2 için **doldurulmaz**.</p>|
+|senderPhone|string|Değişken|2121234567|<p>Gönderen müşterinin telefon numarasını belirtir. İdealde xyz1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.30 karakter sınırı vardır.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
+|SenderGSM|string|Değişken|5361234567|<p>Gönderen müşterinin GSM numarasını belirtir. İdealde 5xx1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.30 karakter sınırı vardır.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
+|SenderEmail|string|Zorunlu Değil|<sendeo@sendeo.com>|Gönderen müşterinin mail adresini içerir.250 karakter sınırı vardır.|
+|Receiver|string|Değişken|“Ali Sendeo”|<p>Alıcı müşteri ünvanını içerir. deliveryType = 1,3 için **zorunludur**.200 karakter iletilmektedir.</p><p>deliveryType = 2 için **doldurulmaz**.</p>|
 |ReceiverId|string|Değişken||Alıcı müşterinin kodudur. Sendeo tarafında değeri biliniyor ise gönderilmelidir. |
 |ReceiverAuthority|string|Zorunlu Değil|“Can Sendeo”|Alıcı müşteri yetkilisini belirtir.|
 |ReceiverBranchCode|integer|Değişken|123|Teslimat noktası operasyonunda gönderilmesi **zorunlu** alandır. deliveryType = 5 seçilmemesi durumunda boş **bırakılmalıdır**.|
-|ReceiverAddress|string|Değişken|“Kemerburgaz Caddesi Vadi İstanbul Park 7B Blok Kat:12 Sarıyer İstanbul”|<p>Alıcı müşterinin adres bilgileri girilmelidir.</p><p>Alıcı müşteri ünvanını içerir. deliveryType = 1,3 için **zorunludur**.</p><p>deliveryType = 2 için **doldurulmaz**.</p>|
+|ReceiverAddress|string|Değişken|“Kemerburgaz Caddesi Vadi İstanbul Park 7B Blok Kat:12 Sarıyer İstanbul”|<p>Alıcı müşterinin adres bilgileri girilmelidir.</p><p>Alıcı müşteri ünvanını içerir. deliveryType = 1,3 için **zorunludur**.225 karakter iletilmektedir.</p><p>deliveryType = 2 için **doldurulmaz**.</p>|
 |ReceiverCityId|integer|Zorunlu|34|City tablosundan gelecek şehir Id’si ile alıcı müşteri ili olarak girilmelidir.|
 |ReceiverDistrictId|integer|Zorunlu|34139|District tablosundan gelecek Id alıcı müşterinin bulunduğu ilçe girilmelidir.|
-|receiverPhone|string|Değişken|2121234567|<p>Alıcı müşterinin telefon numarasını belirtir. İdealde xyz1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
-|ReceiverGSM|string|Değişken|5361234567|<p>Alıcı müşterinin GSM numarasını belirtir. İdealde 5xx1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
-|ReceiverEmail|string|Zorunlu Değil|<sendeo@sendeo.com>|Alıcı müşterinin mail adresini içerir.|
+|receiverPhone|string|Değişken|2121234567|<p>Alıcı müşterinin telefon numarasını belirtir. İdealde xyz1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.30 karakter sınırı vardır.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
+|ReceiverGSM|string|Değişken|5361234567|<p>Alıcı müşterinin GSM numarasını belirtir. İdealde 5xx1234567 şeklinde 10 hane olarak gönderilmesi beklenmektedir.30 karakter sınırı vardır.</p><p>*Phone veya GSM alanlarından bir tanesi mutlaka gönderilmelidir.*</p>|
+|ReceiverEmail|string|Zorunlu Değil|<sendeo@sendeo.com>|Alıcı müşterinin mail adresini içerir.250 karakter sınırı vardır.|
 |PaymentType|integer|Zorunlu|1|Standart olarak 1 **girilmelidir**.|
 |CollectionType|integer|Zorunlu|0|<p>Tahsilatlı kargolarda ödeme şeklini gösterir:</p><p>0 – Tahsilatsız kargo</p><p>1 – Nakit</p><p>2 – Kredi Kartı</p>|
 |CollectionPrice|double|Zorunlu|0|Tahsilatlı kargolarda müşteriden ne kadar tahsilat yapılacağını gösterir. Tahsil edilecek tutar gönderilmelidir. collectionType değerinin 0 olması halinde collectionPrice = 0 olmalıdır. Bu alan 5000 lira ile sınırlıdır.|
