@@ -471,7 +471,7 @@ Post metodu ile çalışır.
 ## <a name="_toc101346627"></a>GETBARCODE
 SETDELIVERY metodu ile daha önce oluşturulmuş gönderinin barkodunu barkod tipi ve referans numarası kullanarak almayı sağlayan servistir.
 
-https://apiintg.kolaygelsin.com.tr/api/Cargo/GETBARCODE 
+https://apiintg.kolaygelsin.com/api/Cargo/GETBARCODE 
 {
   "barcodeLabelType": 2,
   "referenceNo": "8880027245251060"
